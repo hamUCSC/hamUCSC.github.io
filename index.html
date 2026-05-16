@@ -85,7 +85,7 @@
       box-shadow: none;
       background: transparent;
       filter: contrast(1.12) saturate(0.82);
-      animation: floatBlink 2.8s ease-in-out infinite;
+      animation: faceBounce 2.8s ease-in-out infinite;
     }
 
     .welcome-text {
@@ -120,6 +120,18 @@
 
       50% {
         opacity: 0.28;
+        transform: translateY(-13px);
+      }
+    }
+
+    @keyframes faceBounce {
+      0%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      50% {
+        opacity: 1;
         transform: translateY(-13px);
       }
     }
@@ -417,7 +429,7 @@
 
     <div class="enter-content">
       <img class="intro-face" src="logo.jpg" alt="Hamilton Shea" />
-      <div class="welcome-text">welcome to my website! :D</div>
+      <div class="welcome-text">Welcome to my website! :D</div>
       <img class="press-any-key" src="press-any-key.png" alt="Press any key" />
     </div>
   </section>
@@ -550,7 +562,7 @@
     resizeCanvas();
     drawWave();
     window.addEventListener("resize", resizeCanvas);
-    
+
     if (window.location.hash === "#select") {
       entered = true;
       enterScreen.classList.add("hidden");
