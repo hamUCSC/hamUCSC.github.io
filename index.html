@@ -49,7 +49,7 @@
 
     .intro-poster {
       width: min(94vw, 1500px);
-      max-height: 82vh;
+      max-height: 78vh;
       object-fit: contain;
       display: block;
       margin: 0 auto;
@@ -58,28 +58,41 @@
         drop-shadow(0 0 70px rgba(30, 60, 200, 0.35));
     }
 
-    .enter-prompt {
-      margin-top: 28px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #f7f3ff;
-      text-shadow:
-        1px 0 0 rgba(255, 45, 45, 0.4),
-        -1px 0 0 rgba(40, 140, 255, 0.45),
-        0 0 14px rgba(130, 160, 255, 0.75),
-        0 3px 12px black;
-      animation: blink 1.4s infinite;
+    .press-any-key {
+      width: min(58vw, 620px);
+      margin: 18px auto 0;
+      display: block;
+      mix-blend-mode: screen;
+      filter:
+        drop-shadow(0 0 8px rgba(255,255,255,0.65))
+        drop-shadow(0 0 24px rgba(150,170,255,0.45));
+      animation: floatBlink 2.8s ease-in-out infinite;
     }
 
-    @keyframes blink {
-      0%, 45%, 100% {
+    @keyframes floatBlink {
+      0% {
         opacity: 1;
+        transform: translateY(0);
       }
 
-      55%, 85% {
+      35% {
+        opacity: 0.72;
+        transform: translateY(-10px);
+      }
+
+      55% {
         opacity: 0.25;
+        transform: translateY(-13px);
+      }
+
+      75% {
+        opacity: 0.82;
+        transform: translateY(-6px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
@@ -286,6 +299,10 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .press-any-key {
+        width: min(82vw, 520px);
+      }
     }
   </style>
 </head>
@@ -294,7 +311,7 @@
   <section class="enter-screen" id="enterScreen">
     <div class="enter-content">
       <img class="intro-poster" src="HAMILTON (1).png" alt="Hamilton Shea intro" />
-      <div class="enter-prompt">click any button to enter</div>
+      <img class="press-any-key" src="press-any-key.png" alt="Press any key" />
     </div>
   </section>
 
@@ -382,4 +399,3 @@
   </script>
 </body>
 </html>
-```
